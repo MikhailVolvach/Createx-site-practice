@@ -1,0 +1,11 @@
+@import "clear";
+@import "fonts";
+@import "common";
+@import "vars";
+
+// Крупные компоненты
+@import "components/header";
+
+// Небольшие компоненты
+@import "components/nav";
+@import "components/header-contacts";
