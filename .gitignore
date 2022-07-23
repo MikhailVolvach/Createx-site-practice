@@ -1,0 +1,9 @@
+# Deploy directory
+dist/
+
+node_modules/
+package-lock.json
+
+# Uncheck for JetBrains
+.idea/
+.DS_Store

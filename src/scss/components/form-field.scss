@@ -1,0 +1,32 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__caption {
+    line-height: 150%;
+    color: $color-gray;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    background-color: $color-porcelain;
+    border: 1px solid $color-iron;
+    border-radius: 4px;
+    //color: $color-manatee;
+    width: 260px;
+    height: 44px;
+    padding-left: 15px;
+
+    &::placeholder {
+      color: $color-manatee;
+    }
+  }
+  &--big {
+    flex-grow: 1;
+
+    .form-field__input {
+      width: 100%;
+    }
+  }
+}
