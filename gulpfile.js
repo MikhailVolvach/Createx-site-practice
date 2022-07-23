@@ -26,6 +26,7 @@ import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { files } from "./gulp/tasks/files.js";
 
 // Наблюдатель за изменениями в файлах
 function watcher() {
@@ -35,13 +36,14 @@ function watcher() {
     gulp.watch(path.watch.js, js);
     gulp.watch(path.watch.images, images);
     gulp.watch(path.watch.svgicons, svgSprive);
+    gulp.watch(path.watch.files, files);
 }
 
 // Последовательная обработка шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle); // Строгая последовательность
 
 // Распараллеливание задач копирования и обработки html файлов.
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svgSprive));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, svgSprive, files));
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server)); // reset только в начале
@@ -53,7 +55,7 @@ const deployFTP = gulp.series(reset, mainTasks, ftp);
 export { dev }
 export { build }
 export { deployZIP }
-export { ftp }
+export { deployFTP }
 
 // Выполнение сценария по умолчанию
 gulp.task('default', dev);
