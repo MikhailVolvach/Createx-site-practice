@@ -1,10 +1,11 @@
 @import "clear";
 @import "fonts";
-@import "common";
 @import "vars";
+@import "common";
 
 // Крупные компоненты
 @import "components/header";
+@import "components/hero";
 
 // Небольшие компоненты
 @import "components/nav";

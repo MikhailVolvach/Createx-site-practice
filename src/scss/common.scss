@@ -9,3 +9,63 @@ html, body {
 }
 
 .svg-logo-dims { width: 130px; height: 22px; }
+
+.main-title {
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 72px;
+  line-height: 130%;
+  letter-spacing: 1px;
+  color: $color-ebony-clay;
+  text-transform: uppercase;
+
+  span {
+    color: $color-primary;
+  }
+
+  &--home {
+    color: $color-light;
+  }
+}
+
+.main-descr {
+  font-size: 20px;
+  line-height: 150%;
+  color: $color-storm-gray;
+
+  &--home {
+    margin-bottom: 60px;
+    color: $color-light;
+  }
+}
+
+.btn {
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+
+  font-weight: 700;
+  font-size: 16px;
+  padding: 15px 39px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $color-light;
+  border-radius: 4px;
+
+  &--fill {
+    background-color: $color-primary;
+    transition: background-color .2s ease-out;
+
+    &:hover, &:active {
+      background-color: $color-primary-hover;
+    }
+  }
+
+  &--stroke {
+    &-light {
+      border-color: $color-light;
+    }
+
+  }
+}
